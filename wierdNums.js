@@ -58,4 +58,5 @@ function powerSumDigTerm2(n) {
   console.log(outputArr[n - 1]);
 }
 
-powerSumDigTerm2(30);
+powerSumDigTerm2(5);
+powerSumDigTerm1(5);
