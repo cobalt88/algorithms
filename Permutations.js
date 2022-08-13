@@ -28,9 +28,9 @@ async function allPermutations(string) {
     output.push(stringArray);
   } else {
     output = await 
-    stringArray.array.forEach((e) => {
+    stringArray.forEach((e) => {
       output.push(e);
     });
   };
-  for
+  for(let i = 0, )
 }
