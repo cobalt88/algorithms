@@ -1,7 +1,5 @@
-let input1 = ["  * * ", "  *   ", "*  *  ", "  * * ", "  * * ", "  *   "];
-
-let input2 = ["      ", "      ", "  *   ", "      ", "      "];
-
+const input1 = ["  * * ", "  *   ", "*  *  ", "  * * ", "  * * ", "  *   "];
+const input2 = ["      ", "      ", "  *   ", "      ", "      "];
 const input3 = [
   "*    *",
   "      ",
@@ -75,55 +73,99 @@ function mineSweeper(input) {
   return output;
 }
 
+/* 
+---------------
+TEST CONDITIONS
+---------------
+*/
 const tests = async (input1, input2, input3, input4, input5, input6) => {
   const test1 = await mineSweeper(input1);
-  test1 === " 2*3*1",
+  const test1expected = [
+    " 2*3*1",
     "13*421",
     "*33*21",
     "13*5*2",
     " 3*5*2",
-    " 2*311" ? console.log("Test 1: Pass") : console.log("Test 1: Fail");
+    " 2*311",
+  ];
+  test1.join("") === test1expected.join("")
+    ? console.log("Test 1: Pass")
+    : console.log("Test 1: Fail");
   console.log(`Output:`);
   console.table(test1);
   console.log("Expected:");
-  console.table([" 2*3*1", "13*421", "*33*21", "13*5*2", " 3*5*2", " 2*311"]);
+  console.table(test1expected);
 
   const test2 = mineSweeper(input2);
-  test2 === "      ",
-    " 111  ",
-    " 1*1  ",
-    " 111  ",
-    "      " ? console.log("Test 2: Pass") : console.log("Test 2: Fail");
+  const test2expected = ["      ", " 111  ", " 1*1  ", " 111  ", "      "];
+  test2.join("") === test2expected.join("")
+    ? console.log("Test 2: Pass")
+    : console.log("Test 2: Fail");
+  console.log(`Output:`);
+  console.table(test2);
+  console.log("Expected:");
+  console.table(test2expected);
 
   const test3 = mineSweeper(input3);
-  test3 === "*1  1*",
+  const test3expected = [
+    "*1  1*",
     "11  11",
     " 111  ",
     " 1*1  ",
     " 111  ",
     "11  11",
-    "*1  1*" ? console.log("Test 3: Pass") : console.log("Test 3: Fail");
+    "*1  1*",
+  ];
+  test3.join("") === test3expected.join("")
+    ? console.log("Test 3: Pass")
+    : console.log("Test 3: Fail");
+  console.log(`Output:`);
+  console.table(test3);
+  console.log("Expected:");
+  console.table(test3expected);
 
   const test4 = mineSweeper(input4);
-  test4 === "      ",
+  const test4expected = [
+    "      ",
     " 1221 ",
     " 2**2 ",
     " 2**2 ",
     " 1221 ",
-    "      " ? console.log("Test 4: Pass") : console.log("Test 4: Fail");
+    "      ",
+  ];
+  test4.join("") === test4expected.join("")
+    ? console.log("Test 4: Pass")
+    : console.log("Test 4: Fail");
+  console.log(`Output:`);
+  console.table(test4);
+  console.log("Expected:");
+  console.table(test4expected);
 
   const test5 = mineSweeper(input5);
-  test5 === "    ",
-    "    ",
-    " 111",
-    " 1*1" ? console.log("Test 5: Pass") : console.log("Test 5: Fail");
+  const test5expected = ["    ", "    ", " 111", " 1*1"];
+  test5.join("") === test5expected.join("")
+    ? console.log("Test 5: Pass")
+    : console.log("Test 5: Fail");
+  console.log(`Output:`);
+  console.table(test5);
+  console.log("Expected:");
+  console.table(test5expected);
 
   const test6 = mineSweeper(input6);
-  test6 === "1*22*1",
+  const test6expected = [
+    "1*22*1",
     "12*322",
     " 123*1",
     " 12*21",
     " 1*21 ",
-    " 111  " ? console.log("Test 6: Pass") : console.log("Test 6: Fail");
+    " 111  ",
+  ];
+  test6.join("") === test6expected.join("")
+    ? console.log("Test 6: Pass")
+    : console.log("Test 6: Fail");
+  console.log(`Output:`);
+  console.table(test6);
+  console.log("Expected:");
+  console.table(test6expected);
 };
 tests(input1, input2, input3, input4, input5, input6);
