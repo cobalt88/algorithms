@@ -79,7 +79,7 @@ TEST CONDITIONS
 ---------------
 */
 const tests = async (input1, input2, input3, input4, input5, input6) => {
-  const test1 = await mineSweeper(input1);
+  const test1 = mineSweeper(input1);
   const test1expected = [
     " 2*3*1",
     "13*421",
